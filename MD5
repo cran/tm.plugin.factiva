@@ -1,0 +1,8 @@
+75e5f8b439c8b577efe748465659da54 *DESCRIPTION
+98bba64dff767bfcb5461b562596fbae *NAMESPACE
+3dc438809956ab6954200fc57304a680 *R/FactivaSource.R
+d3f86eb04f8f30624815126d0bb6d8ee *R/readFactiva.R
+bea2009aee8b62cb3f90521bacd5cd35 *inst/factiva_test.xml
+a7bc288be4addceabae6622091a5f385 *man/FactivaSource.Rd
+95b5bbfc9360ea061346604f1cd8d553 *man/readFactiva.Rd
+52fc83f24dce077131726f35ce7b3e37 *man/tm.plugin.factiva-package.Rd

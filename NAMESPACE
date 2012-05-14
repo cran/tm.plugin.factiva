@@ -1,0 +1,3 @@
+export(readFactiva, FactivaSource)
+importFrom(tm, XMLSource, readXML, PlainTextDocument)
+importFrom(XML, xmlRoot, xmlValue, getNodeSet)
