@@ -1,13 +1,12 @@
-readFactiva <- tm::readXML(
+readFactivaXML <- tm::readXML(
     spec = list(Author = list("function", function(node)
                 toupper(gsub("^\\s+|\\s+$", "",
                              gsub("\n|\\s+", " ",
                                   sapply(XML::getNodeSet(node, "/article/byline"), xmlValue))))),
     Content = list("function", function(node)
-                   paste(sapply(XML::getNodeSet(node, "/article/headline"), xmlValue),
+                   c(sapply(XML::getNodeSet(node, "/article/headline"), xmlValue),
                          sapply(XML::getNodeSet(node, "/article/leadParagraph"), xmlValue),
-                         paste(sapply(XML::getNodeSet(node, "/article/tailParagraphs/paragraph"), xmlValue), collapse="\n"),
-                         sep="\n\n")),
+                         sapply(XML::getNodeSet(node, "/article/tailParagraphs/paragraph"), xmlValue))),
     DateTimeStamp = list("function", function(node)
                          strptime(sapply(XML::getNodeSet(node, "/article/publicationDate/date"), xmlValue),
                                   format="%Y-%m-%d")),
@@ -32,8 +31,6 @@ readFactiva <- tm::readXML(
     Coverage = list("node", "/article/region/name"),
     WordCount = list("function", function(node)
                      as.numeric(sapply(XML::getNodeSet(node, "/article/wordCount"), xmlValue))),
-    Pages = list("function", function(node)
-                 as.numeric(sapply(XML::getNodeSet(node, "/article/pages"), xmlValue))),
     Publisher = list("node", "/article/publisherName"),
     Rights = list("function", function(node)
                   gsub("^\\s+|\\s+$", "",
