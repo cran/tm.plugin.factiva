@@ -11,13 +11,6 @@
   \acronym{XML} or \acronym{HTML} files.
 }
 \details{
-\tabular{ll}{
-  Package: \tab tm.plugin.factiva\cr
-  Type: \tab Package\cr
-  Version: \tab 1.0\cr
-  Date: \tab 2012-02-03\cr
-  License: \tab GPL (>= 2)\cr
-}
   Typical usage is to create a corpus from a \acronym{XML} or \acronym{HTML} files
   exported from Factiva (here called \code{myFactivaArticles.xml}). Setting
   \code{language=NA} allows the language to be set automatically from the
@@ -35,6 +28,10 @@
     inspect(corpus[1])
     meta(corpus[[1]])
   }
+
+  Currently, only \acronym{HTML} files saved in French are supported.
+  Please send the maintainer examples of LexisNexis files in your
+  language if you want it to be supported.
 
   See \code{link{FactivaSource}} for more details and real examples.
 }

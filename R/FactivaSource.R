@@ -4,7 +4,7 @@ FactivaSource <- function(x, encoding = "UTF-8", format = c("auto", "XML", "HTML
     # XML format
     if(format == "XML" ||
        (format == "auto" && grepl(".(xml|XML)$", x))) {
-        tm::XMLSource(x, function(tree) {
+        XMLSource(x, function(tree) {
             sapply(XML::xmlChildren(XML::xmlChildren(XML::xmlChildren(XML::xmlRoot(tree))
                 $ppsArticleResponse)$ppsarticleResultSet), XML::xmlChildren)
         },
@@ -18,15 +18,14 @@ FactivaSource <- function(x, encoding = "UTF-8", format = c("auto", "XML", "HTML
         content <- XML::getNodeSet(tree, "//div[starts-with(@class, 'article')]")
         XML::free(tree)
 
-        s <- tm:::.Source(readFactivaHTML, encoding, length(content), FALSE, seq(1, length(content)), 0, FALSE)
+        s <- Source(readFactivaHTML, encoding, length(content), as.character(seq(1, length(content))), 0, FALSE, "FactivaSource")
         s$Content <- content
-        s$URI <- match.call()$x
-        class(s) = c("FactivaSource", "Source")
+        s$URI <- x
         s
     }
 }
 
-# These functions need to be exactly the same as those for XMLSource
+# This functions need to be exactly the same as those for XMLSource
 # since they can be used with the Factiva XML source
-getElem.FactivaSource <- function(x) tm:::getElem.XMLSource(x)
-eoi.FactivaSource <- function(x) tm:::eoi.XMLSource(x)
+# These functions are the same as those for XMLSource
+getElem.FactivaSource <- function(x) list(content = XML::saveXML(x$Content[[x$Position]]), uri = x$URI)
