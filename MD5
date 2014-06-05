@@ -1,12 +1,12 @@
-045adb741c62b334ef21b6e595dbbd8a *DESCRIPTION
+744455b2843577c93f7a7d7df4282aba *DESCRIPTION
 7abd7a7fc9cb7f31adede7ced34263a6 *NAMESPACE
-c5dae1141cb5716591796f75cf79bc72 *NEWS
-a9ccd92c3c0c9c22c5a42bb60ba03b65 *R/FactivaSource.R
-4bfbea4d103fc8c0634d5603de68a393 *R/readFactivaHTML.R
+0b1c5d17f1a98feb4f62dc9cc021d102 *NEWS
+738d7dda5e6ba0b5a55188ce4ab6bfa2 *R/FactivaSource.R
+e04355c04bd106554d166eb48ec3713b *R/readFactivaHTML.R
 62606c6f109524c084557fd6f8db2065 *R/readFactivaXML.R
 0600b719828c46aac669d95f12df2a86 *inst/texts/factiva_test.html
 de3b39e2bceda4f1c6f1ee67c6352f4b *inst/texts/factiva_test.xml
 f65fab9c9de1209b27532d1d3fc27545 *inst/texts/reut21578-factiva.xml
-edf1298da7e1f8a1c362473251f0c5a1 *man/FactivaSource.Rd
+46aec5932521eb3d7c7b7fe48b89dc73 *man/FactivaSource.Rd
 44de37e716db89b85468a30cf85fffa1 *man/readFactiva.Rd
 bcb64c6afca3127a8fb6ea97245c7eb6 *man/tm.plugin.factiva-package.Rd
